@@ -73,6 +73,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>http://localhost:8080/manager/text</url>
+					<server>Tomcat9</server>
+					<path>/jenkinsbookapp</path>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
