@@ -1,11 +1,9 @@
-package daaw.bookapp.persistence.repo;
+package com.crud.javashastra.repository;
 
-import java.util.List;
 import org.springframework.data.repository.CrudRepository;
-import daaw.bookapp.persistence.model.Book;
 
-public interface BookRepository extends CrudRepository<Book, Long> {
-    List<Book> findByTitle(String title);
+import com.crud.javashastra.entity.Book;
 
-    void deleteById(int id);
+public interface BookRepository extends CrudRepository<Book, Integer> {
+
 }
