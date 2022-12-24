@@ -1,8 +1,8 @@
-package com.crud.javashastra.repository;
+package daaw.bookapp.persistence.repo;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.crud.javashastra.entity.Book;
+import daaw.bookapp.persistence.model.Book;
 
 public interface BookRepository extends CrudRepository<Book, Integer> {
 

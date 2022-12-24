@@ -1,4 +1,4 @@
-package com.crud.javashastra.entity;
+package daaw.bookapp.persistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.crud.javashastra;
+package daaw.bookapp.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,11 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.crud.javashastra.entity.Book;
-import com.crud.javashastra.service.BookService;
+
+import daaw.bookapp.persistence.model.Book;
+import daaw.bookapp.service.BookService;
 
 @Controller
-public class BookControler {
+public class BookController {
 	@Autowired
 	BookService service;
 

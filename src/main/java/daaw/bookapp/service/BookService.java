@@ -1,4 +1,4 @@
-package com.crud.javashastra.service;
+package daaw.bookapp.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.crud.javashastra.entity.Book;
-import com.crud.javashastra.repository.BookRepository;
+import daaw.bookapp.persistence.model.Book;
+import daaw.bookapp.persistence.repo.BookRepository;
 
 @Service
 public class BookService {
