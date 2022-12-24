@@ -8,90 +8,62 @@ import javax.persistence.Id;
 
 @Entity
 public class Book {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int id;
+	@Column
+	String name;
+	@Column
+	String author;
+	@Column
+	int noOfPages;
+	@Column
+	String publication;
 
- @Id
- @GeneratedValue(strategy = GenerationType.IDENTITY)
- private long id;
- 
- @Column(nullable = false, unique = true)
- private String title;
- 
- @Column(nullable = false)
- private String author;
- 
- public Book() {}
- 
-public Book(String title, String author) {
-    super();
-    this.title = title;
-    this.author = author;
-}
 
-public long getId() {
-    return id;
-}
+	public Book() {
+		super();
 
-public void setId(long id) {
-    this.id = id;
-}
+	}
 
-public String getTitle() {
-    return title;
-}
+	public int getId() {
+		return id;
+	}
 
-public void setTitle(String title) {
-    this.title = title;
-}
+	public void setId(int id) {
+		this.id = id;
+	}
 
-public String getAuthor() {
-    return author;
-}
+	public String getName() {
+		return name;
+	}
 
-public void setAuthor(String author) {
-    this.author = author;
-}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-@Override
-public int hashCode() {
-    final int prime = 31;
-    int result = 1;
-    result = prime * result + ((author == null) ? 0 : author.hashCode());
-    result = prime * result + (int) (id ^ (id >>> 32));
-    result = prime * result + ((title == null) ? 0 : title.hashCode());
+	public String getAuthor() {
+		return author;
+	}
 
-    return result;
-}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
 
-@Override
-public boolean equals(Object obj) {
-    if (this == obj)
-        return true;
-    if (obj == null)
-        return false;
-    if (getClass() != obj.getClass())
-        return false;
-    
-    Book other = (Book) obj;
-    
-    if (author == null) {
-        if (other.author != null)
-            return false;
-    } else if (!author.equals(other.author))
-        return false;
-    if (id != other.id)
-        return false;
-    if (title == null) {
-        if (other.title != null)
-            return false;
-    } else if (!title.equals(other.title))
-        return false;
-    
-    return true;
- }
+	public int getNoOfPages() {
+		return noOfPages;
+	}
 
- @Override
- public String toString() {
-    return "Book [id=" + id + ", title=" + title + ", author=" + author + "]";
- }
+	public void setNoOfPages(int noOfPages) {
+		this.noOfPages = noOfPages;
+	}
+
+	public String getPublication() {
+		return publication;
+	}
+
+	public void setPublication(String publication) {
+		this.publication = publication;
+	}
 
 }
