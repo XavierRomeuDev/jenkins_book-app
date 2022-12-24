@@ -1,5 +1,7 @@
 package daaw.bookapp.controllers;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,18 +41,20 @@ public class BookController {
         return bookRepository.findById(id).orElseThrow(BookNotFoundException::new);
     }
 
+    //API CALL
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Book create(@RequestBody Book book) {
         return bookRepository.save(book);
     }
-   
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
-        bookRepository.findById(id).orElseThrow(BookNotFoundException::new);
-        bookRepository.deleteById(id);
+
+    //page action
+    public Book addBook(Book book){
+        return bookRepository.save(book);
     }
    
+    
+    //API CALL
     @PutMapping("/{id}")
     public Book updateBook(@RequestBody Book book, @PathVariable Long id){
         if (book.getId() != id) {
@@ -58,5 +62,29 @@ public class BookController {
         }
         bookRepository.findById(id).orElseThrow(BookNotFoundException::new);
         return bookRepository.save(book);
-        }
+    }
+
+    //page action
+    public Book updateBook(Book book){
+       Optional<Book> result = bookRepository.findById(book.getId());
+       Book existing = result.get();
+       existing.setAuthor(book.getAuthor());  
+       existing.setId(book.getId());  
+       existing.setTitle(book.getTitle());  
+       return bookRepository.save(existing);
+    }
+
+    //API CALL
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        bookRepository.findById(id).orElseThrow(BookNotFoundException::new);
+        bookRepository.deleteById(id);
+    }
+   
+    //page action
+    public void deleteById(Long id){
+        bookRepository.findById(id).orElseThrow(BookNotFoundException::new);
+        bookRepository.deleteById(id);    
+    }
+
    } 

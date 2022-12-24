@@ -6,4 +6,6 @@ import daaw.bookapp.persistence.model.Book;
 
 public interface BookRepository extends CrudRepository<Book, Long> {
     List<Book> findByTitle(String title);
+
+    void deleteById(int id);
 }
