@@ -80,7 +80,7 @@
 				<configuration>
 					<url>http://localhost:8080/manager/text</url>
 					<server>Tomcat9</server>
-					<path>/jenkinsbookapp</path>
+					<path>jenkinsbookapp</path>
 				</configuration>
 			</plugin>
 		</plugins>
