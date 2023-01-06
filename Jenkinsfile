@@ -21,10 +21,10 @@ pipeline {
         stage ('Deployment Stage') {
             steps {
                 withMaven(maven : 'maven_3_8_6') {
-                    bat 'mvn tomcat7:undeploy'
+                    bat 'mvn tomcat9:undeploy'
                 }
                 withMaven(maven : 'maven_3_8_6') {
-                    bat 'mvn tomcat7:deploy'
+                    bat 'mvn tomcat9:deploy'
                 }
             }
         }
