@@ -54,6 +54,7 @@ public class BookController {
 		return "redirect:/";
 	}
 
+	//test
 	@GetMapping("/test")
 	public String test() {
 		Book st = new Book();
