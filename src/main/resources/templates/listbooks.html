@@ -13,13 +13,11 @@
                     <tr>
                         <th>Title</th>
                         <th>Author</th>
-                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="book: ${books}">
                         <td th:text="${book.title}" />
-                        <td th:text="${book.author}" />
                         <td th:text="${book.author}" />
                     </tr>
                 </tbody>
